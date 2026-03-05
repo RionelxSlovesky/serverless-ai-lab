@@ -11,9 +11,6 @@ def main():
     ds = load_dataset("glue", "sst2")
     X = ds["train"]["sentence"]
     y = ds["train"]["label"]
-    
-    N = 15000
-    X, y = X[:N], y[:N]
 
     Xtr, Xva, ytr, yva = train_test_split(
         X, y, test_size=0.1, random_state=42, stratify=y
