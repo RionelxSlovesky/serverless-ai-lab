@@ -57,11 +57,6 @@ def main():
     X = ds["train"]["sentence"]
     y = ds["train"]["label"]
 
-    # deadline-safe subset (still real dataset)
-    N = 20000
-    X = X[:N]
-    y = y[:N]
-
     vocab_counter = Counter()
     for s in X:
         vocab_counter.update(tokenize(s))
